@@ -1,0 +1,11 @@
+<h1>Pages#public</h1>
+<p>Find me in app/views/pages/public.html.erb</p>
+
+
+<% if user_signed_in? %>
+  Then, <%= link_to "Private Stuff", private_path %>
+<% else %>
+  <h2>Want to see private stuff</h2>
+  First, <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+
+<% end %>
