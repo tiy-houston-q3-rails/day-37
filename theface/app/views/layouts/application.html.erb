@@ -11,6 +11,18 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+<nav>
+  <% if user_signed_in? %>
+    Hi <%= current_user.name %>
+    [Sign out]
+  <% else %>
+    <%= link_to user_omniauth_authorize_path(:facebook) do %>
+      <%= image_tag "http://sociallygold.com/wp-content/uploads/2014/05/facebook-login-button.png" %>
+    <% end %>
+
+  <% end %>
+</nav>
+
 <%= yield %>
 
 </body>
