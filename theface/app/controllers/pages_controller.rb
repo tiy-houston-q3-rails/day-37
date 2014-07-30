@@ -6,5 +6,7 @@ class PagesController < ApplicationController
   end
 
   def private
+    fb = Koala::Facebook::API.new(current_user.access_token)
+    @friends = fb.get_connection("me", "friends")
   end
 end

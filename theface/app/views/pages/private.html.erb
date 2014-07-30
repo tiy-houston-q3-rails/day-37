@@ -1,2 +1,9 @@
 <h1>Pages#private</h1>
 <p>Find me in app/views/pages/private.html.erb</p>
+
+
+<h1>Your Friends:</h1>
+<% @friends.each do |friend| %>
+  <img src="http://graph.facebook.com/<%= friend["id"] %>/picture?type=square"/>
+  <em><%= friend["name"] %></em>
+<% end %>
